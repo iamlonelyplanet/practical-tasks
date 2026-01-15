@@ -6,5 +6,12 @@ package com.walking.lesson1_varaibles;
  */
 public class Task1 {
     public static void main(String[] args) {
+        int a = 10;
+        int b = 5;
+        int c = a + b;
+        a = c - a;
+        b = c - a;
+        System.out.println("Переменная a = " + a);
+        System.out.println("Переменная b = " + b);
     }
 }
