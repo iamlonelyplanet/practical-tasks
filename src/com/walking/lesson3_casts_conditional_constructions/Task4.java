@@ -1,5 +1,7 @@
 package com.walking.lesson3_casts_conditional_constructions;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры два целых числа.
  * Если первое – четное ИЛИ второе – кратно трем,
@@ -17,5 +19,31 @@ package com.walking.lesson3_casts_conditional_constructions;
  */
 public class Task4 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Введите первое целое число: ");
+        int a =  sc.nextInt();
+
+        System.out.print("Введите второе целое число: ");
+        int b =  sc.nextInt();
+
+        sc.close();
+
+        if (a % 2 == 0 || b % 3 == 0) {
+            System.out.print("Результат сравнения этих чисел: ");
+            if (a > b)
+                System.out.println("первое больше второго");
+            else if (a < b)
+                System.out.println("первое меньше второго");
+            else
+                System.out.println("числа равны");
+        }
+
+        if (a % 2 == 0 && a % 3 == 0) {
+            if (Math.pow(a, b) >= Integer.MAX_VALUE || Math.pow(a, b) <= Integer.MIN_VALUE)
+                System.out.println("Результат выражения слишком большой!");
+            else
+                System.out.println(Math.pow(a, b));
+        }
     }
 }
