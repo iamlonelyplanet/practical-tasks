@@ -1,5 +1,7 @@
 package com.walking.lesson7_varargs_overloading;
 
+import java.util.Scanner;
+
 /**
  * Вычислите результат выражения, используя рекурсивный алгоритм.
  * n — число, введенное с клавиатуры.
@@ -9,5 +11,26 @@ package com.walking.lesson7_varargs_overloading;
  */
 public class Task4 {
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Введите целое число: ");
+        int number = sc.nextInt();
+
+        sc.close();
+
+        System.out.println(recurse(number));
+    }
+
+    static double recurse (double number) {
+        double sum = 1;
+
+        if (number == 1) {
+             return sum;
+         }
+
+         sum = Math.sqrt(number + recurse(number - 1));
+
+         return sum;
     }
 }

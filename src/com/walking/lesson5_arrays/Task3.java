@@ -14,19 +14,18 @@ public class Task3 {
         int[] primeNumbers = new int[10];
 
         int n = 0;
+        int i = 2;
         while (n < 10) {
-            int i = 2;
-            while (n < 10) {
-                if (isPrime(i)) {
-                    System.out.printf("Простое число номер %d: %d\n", n + 1, i);
-                    primeNumbers[n] = i;
-                    n++;
-                }
-                i++;
+            if (isPrime(i)) {
+                System.out.printf("Простое число номер %d: %d\n", n + 1, i);
+                primeNumbers[n] = i;
+                n++;
             }
+            i++;
         }
 
         int sum = 0;
+
         for (int numbers : primeNumbers) {
             sum += numbers;
         }
@@ -45,6 +44,7 @@ public class Task3 {
             }
             i++;
         }
+
         return isPrime;
     }
 }
