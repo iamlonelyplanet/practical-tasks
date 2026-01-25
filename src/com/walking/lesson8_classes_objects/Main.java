@@ -15,5 +15,32 @@ package com.walking.lesson8_classes_objects;
  */
 public class Main {
     public static void main(String[] args) {
+        Counter even = new Counter("Чётные числа: ");
+        Counter odd = new Counter("Нечётные числа: ");
+
+        for (int i = 1; i <= 100; i++) {
+            if (isEven(i)) {
+                even.addOne();
+            }
+            else {
+                odd.addOne();
+            }
+        }
+
+        printCounter(even);
+        printCounter(odd);
+
+        Counter experiment = new Counter("Эксперимент = ", 17);
+        experiment.addValue(10);
+
+        printCounter(experiment);
+    }
+
+    static boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+
+    static void printCounter(Counter counter) {
+        System.out.println(counter.counterName + counter.counterValue);
     }
 }
