@@ -1,5 +1,7 @@
 package com.walking.lesson10_static_constants.task3;
 
+import java.util.Scanner;
+
 /**
  * Используя задачу
  * <a href="https://github.com/KFalcon2022/practical-tasks/blob/master/src/lesson7_varargs_overloading/Task5.java">...</a>
@@ -16,7 +18,34 @@ package com.walking.lesson10_static_constants.task3;
  * Помните, константа ссылочного типа гарантирует неизменность ссылки, а не содержимого объекта.
  * Массив – ссылочный тип.
  */
+
 public class Main {
     public static void main(String[] args) {
+        final int numbersLimit;
+        final Scanner SC;
+
+        SC = new Scanner(System.in);
+        System.out.print("Введите целое число - количество первых простых чисел: ");
+        numbersLimit = SC.nextInt();
+        SC.close();
+
+        PrimeNumbersFinder primeNumbersFinder = new PrimeNumbersFinder(numbersLimit);
+        int[] primeNumbers = primeNumbersFinder.findPrimeNumbers();
+
+        System.out.println(sum(primeNumbers));
+    }
+
+
+    //    Логика реализации удобного метода-обертки, по аналогии с предыдущей задачей
+    static int sum(int[] numbers) {
+        return sum(numbers, 0);
+    }
+
+    static int sum(int[] numbers, int i) {
+        if (i == numbers.length - 1) {
+            return numbers[i];
+        }
+
+        return numbers[i] + sum(numbers, i + 1);
     }
 }
