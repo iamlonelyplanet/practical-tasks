@@ -25,7 +25,7 @@ public class Counter {
         return counterValue += value;
     }
 
-    public int minusValue(String counterName, int value) {
+    public int minusValue(int value) {
         return counterValue -= value;
     }
 }
