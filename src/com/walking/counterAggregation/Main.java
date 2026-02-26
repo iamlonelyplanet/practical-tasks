@@ -26,11 +26,11 @@ import com.walking.counterAggregation.service.CounterService;
  */
 
 public class Main {
-    public void main(String[] args) {
-        final String UNIT_VOLUME = "кубометров";
-        final String UNIT_ELECTRICITY = "кВт*ч";
-        final String UNIT_TIME = "мин"; // dial-up так тарифицировался
+    public static final String UNIT_VOLUME = "кубометров";
+    public static final String UNIT_ELECTRICITY = "кВт*ч";
+    public static final String UNIT_TIME = "мин"; // dial-up так тарифицировался
 
+    public static void main(String[] args) {
         Counter gas = new Counter("Газ", 155.3, UNIT_VOLUME);
         Counter coldWater = new Counter("Холодная вода", -10, UNIT_VOLUME);// попытка в отрицательное число
         Counter hotWater = new Counter("Горячая вода", 2, UNIT_VOLUME);
@@ -40,8 +40,8 @@ public class Main {
         // не нужно для решения задачи, чисто для себя.
         System.out.printf("Всего было создано %d счётчиков \n", Counter.getCurrentsAmount());
 
-        // Объект класса CounterService - массив счётчиков
-        CounterService serviceAll = new CounterService(new Counter[]{gas, coldWater, hotWater, electricity, internet});
+        // Объекты класса CounterService - массивы счётчиков
+        CounterService serviceAll = new CounterService(gas, coldWater, hotWater, electricity, internet);
         CounterService serviceWater = new CounterService(new Counter[]{coldWater, hotWater});
         CounterService serviceTwoCounters = new CounterService(new Counter[]{gas, electricity});
         CounterService serviceInternet = new CounterService(internet);
@@ -55,6 +55,7 @@ public class Main {
 
         printCounter(gas);
 
+        // Попытка скрутить счётчик, конструктор в Counter должен отказать
         gas.setValue(-0.9);
         printCounter(gas);
 
@@ -79,7 +80,7 @@ public class Main {
     }
 
     // Помимо названия и значения счётчика, метод печатает ещё и единицы измерения. Не, а зачем они тогда ваще?
-    private void printCounter(Counter counter) {
+    private static void printCounter(Counter counter) {
         System.out.printf("%s: %.2f %s \n",
                 counter.getName(),
                 counter.getValue(),
@@ -88,7 +89,7 @@ public class Main {
     }
 
     // Перегрузка метода, чтобы печатался не только один счётчик, а ещё и их массив (точнее, объект CounterService)
-    private void printCounter(CounterService counterService) {
+    private static void printCounter(CounterService counterService) {
         System.out.println("\nМассив счётчиков:");
         Counter[] array = counterService.getCountersArray();
 

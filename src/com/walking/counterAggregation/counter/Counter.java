@@ -56,10 +56,12 @@ public class Counter {
         return amount;
     }
 
+    // Метод не нужен для выполнения задачи
     private void negativeValuePrint() {
-        System.out.printf("\nПопытка задать отрицательное число счётчику %s. " + "Скручивание - коррупция и бардак!\n" +
+        System.out.printf("\nПопытка задать отрицательное число счётчику %s. " +
+                        "Скручивание - коррупция и бардак!\n" +
                         "Значение счётчика %s остаётся %.2f\n",
-                getName(), getName(), getValue());
+                        getName(), getName(), getValue());
     }
 }
 

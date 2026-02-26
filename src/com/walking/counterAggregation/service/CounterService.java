@@ -54,6 +54,7 @@ public class CounterService {
         return counter;
     }
 
+    // сброс счетчика до нулевого значения
     public Counter makeZero(Counter counter) {
         counter.setValue(0);
 
