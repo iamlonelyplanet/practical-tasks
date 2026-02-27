@@ -1,5 +1,9 @@
 package com.walking.lesson13_inheritance.task1;
 
+import com.walking.lesson13_inheritance.task1.model.Animal;
+import com.walking.lesson13_inheritance.task1.model.Cat;
+import com.walking.lesson13_inheritance.task1.model.Dog;
+
 /**
  * Реализовать класс Animal, содержащий protected-конструктор без параметров,
  * который выводит в консоль сообщение «I’m an animal».
@@ -16,7 +20,10 @@ package com.walking.lesson13_inheritance.task1;
  * Обратите внимание на консоль.
  * Такой ли порядок сообщений вы ожидали увидеть?
  */
+
 public class Main {
     public static void main(String[] args) {
+        new Dog("black");
+        new Cat("white");
     }
 }

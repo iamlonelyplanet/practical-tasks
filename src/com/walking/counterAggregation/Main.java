@@ -40,17 +40,17 @@ public class Main {
         // не нужно для решения задачи, чисто для себя.
         System.out.printf("Всего было создано %d счётчиков \n", Counter.getCurrentsAmount());
 
-        // Объекты класса CounterService - массивы счётчиков
+        // Объекты класса CounterService - массивы счётчиков. 2 варианта создания, для себя
         CounterService serviceAll = new CounterService(gas, coldWater, hotWater, electricity, internet);
         CounterService serviceWater = new CounterService(new Counter[]{coldWater, hotWater});
         CounterService serviceTwoCounters = new CounterService(new Counter[]{gas, electricity});
         CounterService serviceInternet = new CounterService(internet);
 
-        //Альтернативный способ создания массива счётчиков
+        // Альтернативный способ создания массива счётчиков
         Counter[] gasAndInternet = {gas, internet};
         new CounterService(gasAndInternet);
 
-        // Играем с возможностями класса Counter. По условиям задачи, этих команд тут быть не должно. Убрать потом.
+        // Играем с возможностями класса Counter. По условиям задачи, этого тут быть не должно. Убрать потом.
         hotWater.setValue(10.225);
 
         printCounter(gas);
