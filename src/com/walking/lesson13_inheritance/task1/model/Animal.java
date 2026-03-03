@@ -4,5 +4,4 @@ public class Animal {
     protected Animal() {
         System.out.println("\nI'm an animal");
     }
-
 }
