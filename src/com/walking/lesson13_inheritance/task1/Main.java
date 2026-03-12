@@ -1,8 +1,6 @@
 package com.walking.lesson13_inheritance.task1;
 
-import com.walking.lesson13_inheritance.task1.model.Animal;
-import com.walking.lesson13_inheritance.task1.model.Cat;
-import com.walking.lesson13_inheritance.task1.model.Dog;
+import com.walking.lesson13_inheritance.task1.model.*;
 
 /**
  * Реализовать класс Animal, содержащий protected-конструктор без параметров,
@@ -25,5 +23,6 @@ public class Main {
     public static void main(String[] args) {
         new Dog("black");
         new Cat("white");
+        new Cat("black and white");
     }
 }

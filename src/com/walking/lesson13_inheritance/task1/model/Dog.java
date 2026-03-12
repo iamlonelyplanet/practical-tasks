@@ -12,12 +12,12 @@ public class Dog extends Animal {
     Итоговый порядок: I'm a black dog -> I'm an animal -> I'm a dog
     В отличие от кошерного класса Cat, где порядок иной: I'm an animal -> I'm a cat -> I'm a white cat
      */
-    private Dog() {
+    private Dog () {
         System.out.println("I'm a dog");
     }
 
     public Dog(String color) {
-        System.out.printf("I'm a %s dog", color);
+        System.out.printf("I'm a %s dog\n", color);
         this();
     }
 }
