@@ -46,11 +46,12 @@ public class Main {
         String shapeString = drawFigure(size, figure);
         System.out.println(shapeString);
 
-        Figure sq1 = new Square(5);
-        Figure tr1 = new Triangle(5);
-
-        System.out.println(tr1.draw());
-        System.out.println(sq1.draw());
+        // Вот это не нужно, чисто для практики, создавалось предварительно. Пусть остаётся пока
+//        Figure sq1 = new Square(5);
+//        Figure tr1 = new Triangle(5);
+//
+//        System.out.println(tr1.draw());
+//        System.out.println(sq1.draw());
     }
 
     private static String drawFigure(int size, int type) {
