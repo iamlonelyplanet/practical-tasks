@@ -2,6 +2,8 @@ package com.walking.lesson16_abstract_class_interface.task3;
 
 
 import com.walking.lesson16_abstract_class_interface.task3.model.Animal;
+import com.walking.lesson16_abstract_class_interface.task3.model.Cat;
+import com.walking.lesson16_abstract_class_interface.task3.model.Cow;
 import com.walking.lesson16_abstract_class_interface.task3.model.Dog;
 
 /**
@@ -28,7 +30,26 @@ import com.walking.lesson16_abstract_class_interface.task3.model.Dog;
 public class Main {
     public static void main(String[] args) {
         Animal dog = new Dog();
-        System.out.println(dog);
-        dog.sound();
+        Animal cat = new Cat();
+        Animal cow = new Cow();
+        Cow c1 = new Cow();
+
+        Animal[] anm = new Animal[]{dog, cat, cow, c1};
+
+        System.out.println("\nМассив животных: ");
+        soundAll(anm);
+
+        System.out.println("\nЕдиничное животное: ");
+        sound(c1);
     }
+
+    private static void soundAll(Animal[] animals) {
+        for (Animal animal : animals) {
+            sound(animal);
+        }
+    }
+
+    private static void sound(Animal animal) {
+            animal.sound();
+        }
 }
