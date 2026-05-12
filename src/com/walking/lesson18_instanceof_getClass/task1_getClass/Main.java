@@ -21,17 +21,17 @@ public class Main {
 
         printAnimalSound(animals);
 
-        printAnimalSoundNew(d2);
+        printAnimalSound(d2);
 
     }
 
     private static void printAnimalSound(Animal[] animals) {
         for (Animal animal : animals) {
-            printAnimalSoundNew(animal);
+            printAnimalSound(animal);
         }
     }
 
-    private static void printAnimalSoundNew(Animal animal) {
+    private static void printAnimalSound(Animal animal) {
         if (animal.getClass().equals(Dog.class)) {
             ((Dog) animal).woof();
         } else if (animal.getClass().equals(Cat.class)) {
