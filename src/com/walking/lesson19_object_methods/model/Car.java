@@ -129,6 +129,6 @@ public class Car {
 
         Car a = (Car) obj;
 
-        return (this.hashCode() == a.hashCode());
+        return this.plateNumber == a.plateNumber && this.model == a.getModel();
     }
 }

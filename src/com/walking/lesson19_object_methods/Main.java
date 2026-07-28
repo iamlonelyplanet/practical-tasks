@@ -43,21 +43,21 @@ public class Main {
             result.printCar();
         }
 
-        System.out.printf("Одинаковые поля, разные объекты (a2 приведён): %b\n", c1.hashCode() == a2.hashCode());
-        System.out.printf("Одинаковые поля, разные объекты (a2 приведён), сравниваем через equals: %b\n", c1.equals(a2));
-        System.out.printf("Одинаковые поля, одинаковые объекты, разные имена: %b\n", c7.equals(c8));
-        System.out.println(c1.hashCode() == a1.hashCode());
-        System.out.println(c7.equals(c8));
-        System.out.println(c4.equals(a2));
-        System.out.println(c1.equals(a2));
+//        System.out.printf("Одинаковые поля, разные объекты (a2 приведён): %b\n", c1.hashCode() == a2.hashCode());
+//        System.out.printf("Одинаковые поля, разные объекты (a2 приведён), сравниваем через equals: %b\n", c1.equals(a2));
+//        System.out.printf("Одинаковые поля, одинаковые объекты, разные имена: %b\n", c7.equals(c8));
+//        System.out.println(c1.hashCode() == a1.hashCode());
+//        System.out.println(c7.equals(c8));
+//        System.out.println(c4.equals(a2));
+//        System.out.println(c1.equals(a2));
+//
+//        printAll(cars);
 
-        printAll(cars);
-
-        c1.printCar();
-        ((Car) a2).printCar();
-        System.out.println(a1.getClass());
-        System.out.println(c1.getClass());
-        System.out.println(c1);
+//        c1.printCar();
+//        ((Car) a2).printCar();
+//        System.out.println(a1.getClass());
+//        System.out.println(c1.getClass());
+//        System.out.println(c1);
     }
 
     static void printAll(Car[] cars) {
